@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles.css"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+
+    *{
+        margin:0;
+        padding:0;
+        font-family: sans-serif;
+    }
+    h1 {
+             font-family: 'Baloo', cursive;
+        }
+    .banner{
+        width:100%;
+        height:100vh;
+        background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(https://www.livehome3d.com/assets/img/articles/home-decor-ideas/living-room-in-green-and-gray-tones@2x.jpg);
+        background-size: cover;
+        background-position: center;
+    
+    
+    }
+    body {
+            margin: 0;
+            padding: 0;
+        
+    }
+       
+
+        .fixed-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #009688;
+            color: #ffffff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 9999; /* Set a high z-index to make sure it appears on top of other elements */
+        }
+
+        .fixed-icon:hover {
+            background-color: #00796b;
+        }
+        .center-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+       
+    }
+    .navbar{
+        width: 85%;
+        margin: auto;
+        padding: 35px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .logo{
+        width:120px;
+        cursor:pointer;
+    }
+    .navbar ul li{
+        list-style: none;
+        display: inline-block;
+        margin: 0 20px;
+        position: relative;
+    }
+    .navbar ul li a{
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase;
+    }
+    .navbar ul li::after{
+        content: '';
+        height:3px;
+        width: 0;
+        background: #009688;
+        position:absolute;
+        left:0;
+        bottom: -10px;
+        transition: 0.5s;
+    }
+    .navbar ul li:hover::after{
+        width:100%;
+    }
+    .content{
+        width: 100%;
+        position: absolute;
+        top:50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color:#fff;
+    }
+    .content h1{
+        font-size: 70px;
+        margin-top: 30px;
+    }
+    .content p{
+        margin: 20px auto;
+        font-weight: 100;
+        line-height: 25px;
+    }
+    
+      
+    .view-more-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 25px; /* Adjust as needed for the oval shape */
+      text-decoration: none;
+      color: white;
+      background-color: #009688;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+    }
+   
+
+    /* Hover effect */
+    .view-more-btn:hover {
+      background-color: #579b93; /* Green color on hover */
+      color: white;
+    }
+    button{
+        width: 150px; 
+        padding: 10px; 
+        text-align: center;
+        margin: 20px 10px;
+        border-radius: 25px;
+        font-weight: bold;
+        border: 2px solid #009688;
+        background:transparent; 
+        color: #fff;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+    span{
+    background: #009688;
+    height:100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left:0;
+    bottom: 0;
+    z-index:-1;
+    transition: 0.5s;
+    }
+    button:hover span{
+        width:100%;
+    }
+    button:hover{
+        border: none;
+    }
+    .card {
+    margin-top: 20px;
+     }
+
+.btn{
+    font-size: 12px; /* Adjust font size */
+  padding: 2px 2px;
+  width: 100px;
+}
+
+.img-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.img-container img {
+    transition: transform 0.3s ease;
+}
+
+.img-container:hover img {
+    transform: scale(1.2); /* Change the scale factor for the desired expansion level */
+}
+
+
+
+
+.card-img-top {
+  width: 410px; /* Set a specific width */
+  height: 250px; /* Set a specific height */
+  object-fit: cover; /* Maintain aspect ratio */
+}
+.custom-img-width {
+        width: 400px; /* or any other desired width value */
+    }
+
+    .custom-img {
+        width: 100%; /* Set the desired width */
+        height: 250px; /* Set the desired height */
+        object-fit: cover; /* Maintain aspect ratio and cover container */
+    }
+
+    h2 {
+ font-size: 50px;
+ font-weight: bold;
+ color: #333;
+ text-align: center;
+ padding: 20px 0;
+ border-bottom: 1px solid #ddd;
+    }
+ 
+
+
+</style>
+</head>
+<body>
+    <div class="fixed-icon">
+        <i class="fas fa-comment-dots" ></i> 
+    </div>
+    <div class="banner"></div>
+    <div class="navbar">
+        <img src="https://i.pinimg.com/originals/db/95/5f/db955f1ba7cb8a91997ba361aa9d9c6e.png" class="logo">
+        <ul>
+            <!-- <li><a href="#">Home</a></li>
+            <li><a href="#">Bedroom</a></li>
+            <li><a href="#">Dining</a></li>
+            <li><a href="#">Kitchen</a></li>
+            <li><a href="#">Backyard</a></li> -->
+
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#bedroom" class="nav-link">Bedroom</a></li>
+            <li><a href="#bathroom" class="nav-link">Bathroom</a></li>
+            <li><a href="#kitchen" class="nav-link">Kitchen</a></li>
+            <li><a href="#backyard" class="nav-link">Backyard</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>DESIGN YOUR HOUSE</h1>
+        <p>Designing Dreams, Crafting Comfort:<br> Your Journey to Stylish Living Begins Here!</p>
+        <div>
+            <button type="button">DISCOVER<span></span></button>
+            <button type="button">CONTACT US<span></span></button>
+            <a href="audit.html"><button type="button">BUY<span></span></button></a> 
+        </div>
+    </div>    
+<br><br>
+
+
+
+<div id="bedroom" class="container">
+        <h2 style="color: rgb(204, 120, 134);">Bedroom Section</h2>
+    <div class="album py-5 bg-body-tertiary" >
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="background-color:rgb(235, 218, 221);">
+            <div class="col">
+              <div class="card shadow-sm">
+                <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                <div class="img-container">
+                <img src="https://th.bing.com/th/id/OIP.11YCRARozWoCdRHDaNT2BAHaHa?rs=1&pid=ImgDetMain" class="card-img-top custom-img" alt="Bedroom">
+              </div>
+                <div class="card-body">
+                  <p style="color: black"card-text> MODERN BEDROOM</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                    </div>
+                    <b class="text-body-secondary">$ 500,000</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+                <div class="card shadow-sm">
+                  <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                  <div class="img-container">
+                  <img src="https://th.bing.com/th/id/R.b602fdda3817f24bacf6a5efbd6d0ec0?rik=zrJ4neCQ7cc4MQ&riu=http%3a%2f%2fimages.unsplash.com%2fphoto-1582582621959-48d27397dc69%3fcrop%3dentropy%26cs%3dtinysrgb%26fit%3dmax%26fm%3djpg%26ixid%3dMnwxMjA3fDB8MXxzZWFyY2h8NHx8YmVkcm9vbSUyMGFlc3RoZXRpY3x8MHx8fHwxNjIwNDExOTgx%26ixlib%3drb-1.2.1%26q%3d80%26w%3d1080&ehk=7lr95lnyByyEbTL6lzOxKY3m4QoawJqDtPGwZMKQL%2fU%3d&risl=&pid=ImgRaw&r=0" class="card-img-top custom-img" alt="Bedroom">
+                  </div>
+                  <div class="card-body">
+                    <p style="color: black"card-text"> COZY BEDROOM</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                      </div>
+                      <b class="text-body-secondary">$ 1,000,000</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card shadow-sm">
+                  <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                  <div class="img-container">
+                  <img src="https://i.pinimg.com/originals/b5/6e/5c/b56e5ce3847ac8b5870c4ef10d3ed080.jpg" class="card-img-top custom-img" alt="Bedroom">
+                  </div>                
+                  <div class="card-body">
+                    <p style="color: black"card-text"> WOODEN BEDROOM</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                      </div>
+                      <b class="text-body-secondary">$ 150,000</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+           
+            
+              <div class="col">
+                <div class="card shadow-sm">
+                  <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                  <div class="img-container">
+                  <img src="https://i.pinimg.com/564x/ca/9d/7b/ca9d7bf071e8f7c4016b999bc28a6441.jpg" class="card-img-top custom-img" alt="Bedroom">                 
+                </div>
+                  <div class="card-body">
+                    <p style="color: black"card-text"> VINTAGE BEDROOM</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                      </div>
+                      <b class="text-body-secondary">$ 20,000,000</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card shadow-sm">
+                  <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                  <div class="img-container">
+                  <img src="https://s3-ap-south-1.amazonaws.com/designcafe-dev/wp-content/uploads/2019/12/17054643/industrial-bedroom-design-ideas-intro.jpg" class="card-img-top custom-img" alt="Bedroom">                 
+                </div>
+                  <div class="card-body">
+                    <p style="color: black"card-text"> INDUSTRIAL BEDROOM</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                      </div>
+                      <b class="text-body-secondary">$ 30,000,000</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col">
+                <div class="card shadow-sm">
+                  <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                  <div class="img-container">
+                  <img src="https://www.sumcoco.com/wp-content/uploads/2019/11/Bohemian-bedroom-decor-36.jpg" class="card-img-top custom-img" alt="Bedroom">                 
+                </div>
+                  <div class="card-body">
+                    <p style="color: black"card-text"> BOHEMIAN STYLE BEDROOM</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                      </div>
+                      <b class="text-body-secondary">$ 15,000,000</b>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="center-container">
+
+      <!-- Button element with the specified text -->
+      <a href="#" class="view-more-btn">View More</a>
+  
+      <!-- Additional content goes here -->
+  
+    </div>
+  
+
+
+          <div id="kitchen" class="container">
+            <h2 style="color: rgb(210, 42, 42)">Kitchen Section</h2>
+        <div class="album py-5 bg-body-tertiary">
+            <div class="container">
+        
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="background-color: rgb(230, 209, 196);">
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                    <div class="img-container">
+                    <img src="https://th.bing.com/th/id/OIP.udSOwaTvRddfWTZU0zzYLwHaE7?rs=1&pid=ImgDetMain" class="card-img-top custom-img" alt="Bedroom">
+                    </div>
+                    <div class="card-body">
+                      <p style="color: black"card-text> One Wall Kitchen</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                        </div>
+                        <b class="text-body-secondary">$ 700,000</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                    <div class="img-container">
+                    <img src="https://www.felthamgroupltd.co.uk/wp-content/uploads/2017/04/cob41.0.jpg" class="card-img-top custom-img" alt="Bedroom">                 
+                    </div>
+                    <div class="card-body">
+                      <p style="color: black"card-text">L Shaped Kitchen</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                        </div>
+                        <b class="text-body-secondary">$ 900,000</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                    <div class="img-container">
+                    <img src="https://th.bing.com/th/id/R.dd2970f8326e4a24b1efd3455e8ff907?rik=NLHZi%2fS8ghzBOg&pid=ImgRaw&r=0" class="card-img-top custom-img" alt="Bedroom">                 
+                  </div>
+                    <div class="card-body">
+                      <p style="color: black"card-text">U Shaped Kitchen</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                        </div>
+                        <b class="text-body-secondary">$ 10,000,000</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                    <div class="img-container">
+                    <img src="https://www.durasupreme.com/wp-content/uploads/2019/07/ISPI01_Brighton-Way_ARDEN-HILLS-ML-MidWHome-7.jpg" class="card-img-top custom-img" alt="Bedroom">                 
+                    </div>
+                    <div class="card-body">
+                      <p style="color: black"card-text">Galley Kitchen</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                        </div>
+                        <b class="text-body-secondary">$ 300,000</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                    <div class="img-container">
+                    <img src="https://th.bing.com/th/id/OIP.3G705ZpLiN7xqh-XVOjM5gHaE8?rs=1&pid=ImgDetMain" class="card-img-top custom-img" alt="Bedroom">                 
+                    </div>
+                    <div class="card-body">
+                      <p style="color: black"card-text">Island Kitchen</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                        </div>
+                        <b class="text-body-secondary">$ 20,000,000</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                    <div class="img-container">
+                    <img src="https://i.pinimg.com/originals/b7/87/54/b78754083b8a764ae5128a9b53602b3b.jpg" class="card-img-top custom-img" alt="Bedroom">                 
+                    </div>
+                    <div class="card-body">
+                      <p style="color: black"card-text">G Shaped Kitchen</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                        </div>
+                        <b class="text-body-secondary">$ 15,000,000</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+    
+                </div>
+              </div>
+            </div>
+          </div>   
+
+          <div class="center-container">
+
+            <!-- Button element with the specified text -->
+            <a href="#" class="view-more-btn">View More</a>
+        
+            <!-- Additional content goes here -->
+        
+          </div>
+  
+
+
+          <div id="bathroom" class="container">
+            <h2 style="color: rgb(78, 127, 159);">Bathroom Section</h2>
+        <div class="album py-5 bg-body-tertiary">
+            <div class="container">
+        
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="background-color: rgb(191, 222, 226);">
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                    <div class="img-container">
+                    <img src="https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2021/6/29/2/DOTY2021_Etch-Design-Group_Dramatic00019.jpg.rend.hgtvcom.966.644.suffix/1625012739199.jpeg" class="card-img-top custom-img" alt="Bedroom">
+                    </div>
+                    <div class="card-body">
+                      <p style="color: black"card-text> TRANSITIONAL BATHROOM</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                        </div>
+                        <b class="text-body-secondary">$ 200,000</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                    <div class="img-container">
+                    <img src="https://th.bing.com/th/id/R.3fae7b055c71d8439c7f8da2a686d2de?rik=%2fthDXbNeSK%2fFDQ&riu=http%3a%2f%2fwww.roca.com%2frocalife%2fwp-content%2fuploads%2f2018%2f12%2fHEADER.jpg&ehk=OhdbI7SvaKvmY804Te0tyEAvJWBCID%2b46%2bpPhHxRImA%3d&risl=&pid=ImgRaw&r=0" class="card-img-top custom-img" alt="Bedroom">                 
+                    </div>
+                    <div class="card-body">
+                      <p style="color: black"card-text">MODERN BATHROOM</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                        </div>
+                        <b class="text-body-secondary">$ 300,000</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                    <div class="img-container">
+                      <img src="https://www.thewowstyle.com/wp-content/uploads/2015/06/Australian-luxury-bathroom-with-brown-tiles-and-hardwood-floor.jpg" class="card-img-top custom-img" alt="Bedroom">                 
+                    </div>
+                      <div class="card-body">
+                      <p style="color: black"card-text">CONTEMPRARY BATHROOM</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                        </div>
+                        <b class="text-body-secondary">$ 900,000</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                    <div class="img-container">
+                    <img src="https://th.bing.com/th/id/R.49a75e5fcfedfc9c6136b459e8e5987b?rik=ZpfWKmpUnTve8Q&riu=http%3a%2f%2fcdn.onekindesign.com%2fwp-content%2fuploads%2f2017%2f05%2fGorgeous-Farmhouse-Style-Bathrooms-09-1-Kindesign.jpg&ehk=%2fUJhLdw1T9GB1yC5NfBeC328x9xh85rp6FwqMdGi8y0%3d&risl=&pid=ImgRaw&r=0" class="card-img-top custom-img" alt="Bedroom">                 
+                  </div>
+                    <div class="card-body">
+                      <p style="color: black"card-text">FARM HOUSE STYLE BATHROOM</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                        </div>
+                        <b class="text-body-secondary">$ 500,000</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                    <div class="img-container">
+                    <img src="https://th.bing.com/th/id/OIP.s-O9YuJuR9VOSKEXpc_69AHaLL?rs=1&pid=ImgDetMain" class="card-img-top custom-img" alt="Bedroom">                 
+                  </div>                    
+                    <div class="card-body">
+                      <p style="color: black"card-text">RUSTIC BATHROOM</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                        </div>
+                        <b class="text-body-secondary">$ 20,000,000</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                    <div class="img-container">
+                    <img src="https://www.thespruce.com/thmb/_04qpLc0pYpvYmyxkAsSl7SLbD8=/2800x1867/filters:no_upscale():max_bytes(150000):strip_icc()/Barnard-031-772d80669f9f4e45bfc9ad16b080e036.jpg" class="card-img-top custom-img" alt="Bedroom">                 
+                    </div>
+                    <div class="card-body">
+                      <p style="color: black"card-text">INDUSTRIAL BATHROOM</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                        </div>
+                        <b class="text-body-secondary">$ 25,000,000</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+    
+                </div>
+              </div>
+            </div>
+          </div>   
+          <div class="center-container">
+
+            <!-- Button element with the specified text -->
+            <a href="#" class="view-more-btn">View More</a>
+        
+            <!-- Additional content goes here -->
+        
+          </div>
+  
+
+          <div id="backyard" class="container">
+            <h2 style="color: rgb(170, 74, 170);">BackYard Section</h2>
+        <div class="album py-5 bg-body-tertiary">
+            <div class="container">
+        
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="background-color: rgb(233, 209, 230);">
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                    <div class="img-container">
+                    <img src="https://www.bhg.com/thmb/p5FNzbEl4z2Bn2-QUZEvyk8Y6mQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Backyard-shed-_DSC8003-74b4jbdSa7BBQq3eh8lutz-4be717157ba344cc9967b5722379ea30.jpg" class="card-img-top custom-img" alt="Bedroom">
+                    </div>
+                    <div class="card-body">
+                      <p style="color: black"card-text> BACKYARD SHED</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                        </div>
+                        <b class="text-body-secondary">$ 800,000</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                    <div class="img-container">
+                    <img src="https://www.bhg.com/thmb/cIz4nLU9_28oez9F9iexBEilhDo=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Patio-29_Exterior-Aa0zOVBv4NjBSyta0ob9G0-240b88e7f483419594f47d5ed015690c.jpg" class="card-img-top custom-img" alt="Bedroom">                 
+                    </div>
+                    <div class="card-body">
+                      <p style="color: black"card-text">PATIO IN BACKYARD</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                        </div>
+                        <b class="text-body-secondary">$ 150,000</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                    <div class="img-container">
+                    <img src="https://www.bhg.com/thmb/KVkW5MSzmIFwc5pMzBoJLSCiw1k=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Backyard-firepit-505HickmanSt.0446-4tyFGrjhKKa9Y6Pf3q84iJ-58a95726ba2e4002b6f300cc25e61b61.jpg" class="card-img-top custom-img" alt="Bedroom">                 
+                    </div>
+                    <div class="card-body">
+                      <p style="color: black"card-text">FIRE PIT IN BACKYARD</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                        </div>
+                        <b class="text-body-secondary">$ 90,000</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                    <div class="img-container">
+                    <img src="https://www.bhg.com/thmb/nUgQh6TkqS9GJ9EmHrEwt5_59RE=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Backyard-dining-7001131-Brown-Res2411-5WuTMw_UKWEA5OVqmRaDPx-accaff66714e4064b7ec2f9a9c74b4f1.jpg" class="card-img-top custom-img" alt="Bedroom">                 
+                    </div>
+                    <div class="card-body">
+                      <p style="color: black"card-text">OUTDOOR DINING TABLE</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                        </div>
+                        <b class="text-body-secondary">$ 50,000</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                    <div class="img-container">
+                    <img src="https://www.bhg.com/thmb/8lclifc970eht9osNW90DOozqjI=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Outdoor-kitchen-20180327_sim_930-9lGhhYdlqJO9XMkPaZEawB-4e839858f51941a2b6abfd62e2ec519a.jpg" class="card-img-top custom-img" alt="Bedroom">                 
+                    </div>
+                    <div class="card-body">
+                      <p style="color: black"card-text">OUTDOOR KITCHEN</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                        </div>
+                        <b class="text-body-secondary">$ 25,000,000</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                    <div class="img-container">
+                    <img src="https://th.bing.com/th/id/R.f91935dc4934b41a68238e3470ec58b5?rik=thZ43eIRZeUh8A&riu=http%3a%2f%2fhousediamond.com%2fwp-content%2fuploads%2f2016%2f11%2fshutterstock_99287033.jpg&ehk=ZNPephw7Kye7ph9n7YWZ%2bkXEe8jj5SlUFh%2fAf2hzmyw%3d&risl=&pid=ImgRaw&r=0" class="card-img-top custom-img" alt="Bedroom">                 
+                    </div>
+                    <div class="card-body">
+                      <p style="color: black"card-text">BACKYARD POOL</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                          <button type="button" class="btn btn-sm btn-outline-secondary">Purchase</button>
+                        </div>
+                        <b class="text-body-secondary">$ 15,000,000</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+    
+                </div>
+              </div>
+            </div>
+          </div>             
+          <div class="center-container">
+
+            <!-- Button element with the specified text -->
+            <a href="#" class="view-more-btn">View More</a>
+        
+            <!-- Additional content goes here -->
+        
+          </div>
+
+          <script>
+            document.querySelectorAll('.nav-link').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+    
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+    
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop,
+                            behavior: 'smooth'
+                            
+                        });
+                    }
+                    
+                });
+            });
+        </script>
+           
+           
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>ZMS INTERIORS
+          </h6>
+          <p>
+            Welcome to to our website. Hope you have a good time!
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Products
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Furniture</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Home Décor Items</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Customized Design Plans</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Outdoor and Landscape Design</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Pricing</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Settings</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> Karachi, Pakistan</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            zmsinteriors@gmail.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2021 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">ZMSInteriors.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+       
+
+    </body>
+</body>
+</html>
